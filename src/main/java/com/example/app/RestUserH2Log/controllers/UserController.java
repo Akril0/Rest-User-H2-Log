@@ -13,25 +13,14 @@ import java.util.List;
 @RestController
 @RequestMapping(path = "/api/users")
 public class UserController {
-
-    // Добавим регистратор slf4j, а также операторы отладки.
-    // Эти операторы отладки печатаются в консоли.
+    
 
     private static final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
 
-    // @Autowired на наш сервис EmployeeService.
-    // Он используется для внедрения зависимостей, поскольку
-    // класс сервиса здесь является зависимостью.
+
     @Autowired
     UserService service;
 
-    // Использовали аннотации @GetMapping, @DeleteMapping и
-    // @PostMapping, чтобы указать, какие типы HTTP-запросов принимают
-    // и обрабатывают наши методы. Это производные варианты аннотации
-    // @RequestMapping с методом = RequestMethod.METHOD, установленным
-    // для соответствующих типов.
-    // @RequestMapping сопоставляет REST-запросы с контроллером или
-    // методами обработчика.
 
     @GetMapping
     public List<User> getAllUsers() {
